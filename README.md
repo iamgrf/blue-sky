@@ -6,5 +6,5 @@
  就不用每打开个视频手动一层一层点下去。如有侵权告知313554566@qq.com。不允许私自用此项目牟利。
  
 ### 使用
-  - [下载chrome插件](https://github.com/iamgrf/blue-sky/blob/master/blue-sky.crx)
-  - 把.crx拖到chrome中
+  - 下载本项目到自电脑
+  - 把blue-sky.crx拖到chrome中
