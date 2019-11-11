@@ -8,3 +8,5 @@
 ### 使用
   - 下载本项目到自电脑
   - 把blue-sky.crx拖到chrome中
+  - 打开twitter网站后:
+   - <img src="1573483677304.jpg" width="500"/>
