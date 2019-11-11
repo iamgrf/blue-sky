@@ -1,0 +1,29 @@
+{
+  "name": "蓝天",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "自动翻译twittr帖子",
+  "browser_action": {
+    "default_title": "自动翻译twittr帖子",
+    "default_icon":"icon.png"
+  },
+  "icons" : {
+    "16" : "icon.png",
+    "48" : "icon.png",
+    "128" : "icon.png"
+  },
+  "permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": ["jquery-3.4.1.min.js", "background.js"]
+ },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-3.4.1.min.js", "translate.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
