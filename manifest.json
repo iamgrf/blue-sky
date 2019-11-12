@@ -5,24 +5,24 @@
   "description": "自动翻译twittr帖子",
   "browser_action": {
     "default_title": "自动翻译twittr帖子",
-    "default_icon":"icon.png"
+    "default_icon":"./img/icon.png"
   },
   "icons" : {
-    "16" : "icon.png",
-    "48" : "icon.png",
-    "128" : "icon.png"
+    "16" : "./img/icon.png",
+    "48" : "./img/icon.png",
+    "128" : "./img/icon.png"
   },
   "permissions": [
     "http://*/*",
     "https://*/*"
   ],
   "background": {
-    "scripts": ["jquery-3.4.1.min.js", "background.js"]
+    "scripts": ["./js/jquery-3.4.1.min.js", "./js/background.js"]
  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["jquery-3.4.1.min.js", "translate.js"],
+      "js": ["./js/jquery-3.4.1.min.js", "./js/translate.js"],
       "run_at": "document_idle"
     }
   ]
