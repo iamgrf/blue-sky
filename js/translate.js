@@ -1,6 +1,5 @@
 
 function translation(message){
-
     return new Promise(resolve => {
         chrome.runtime.sendMessage({"message": message}, function (result) {
             resolve(result.data);
@@ -12,7 +11,8 @@ function translation(message){
 
 async function twitterTranslation(){
 
-    var divs = $("div[lang='en']:not([translation])");
+    // var divs = $("div[lang='en']:not([translation])");
+    var divs = $("article[role='article']:not([translation])").find("div[dir='auto']:gt(2):not([translation])");
     for(var i = 0; i < divs.length; i++){
 
 
@@ -28,7 +28,10 @@ async function twitterTranslation(){
                     html_str += await translation(message);
                 }
             }else{
-                html_str += $(childrens[j]).html();
+                let message = $($(childrens[j]).children()[0]).text();
+                if (message.length > 0){
+                    html_str += await translation(message);
+                }
             }
         }
         if ($(divs[i]).attr("translation") == undefined){
