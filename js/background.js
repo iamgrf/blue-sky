@@ -43,7 +43,6 @@ function googleTranslation(time, text, call){
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
     var time = new Date().getTime();
     console.log(time + " -> 翻译:" + request.message);
-    // sendResponse({"data": request.message});
     googleTranslation(time, request.message, function(data){
         console.log(time + " -> 结果:" + data);
         sendResponse({"data": data});

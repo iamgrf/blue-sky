@@ -8,6 +8,13 @@ function translation(message){
 
 }
 
+function isChinese(str){
+    if (/.*[\u4e00-\u9fa5]+.*/.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 async function twitterTranslation(){
 
@@ -24,12 +31,12 @@ async function twitterTranslation(){
             var tagName = $(childrens[j]).prop("tagName");
             if (tagName == 'SPAN' && $(childrens[j]).children().length == 0){
                 var message = $(childrens[j]).text().trim();
-                if (message.length > 0){
+                if (message.length > 0 && !isChinese(message)){
                     html_str += await translation(message);
                 }
             }else{
                 let message = $($(childrens[j]).children()[0]).text();
-                if (message.length > 0){
+                if (message.length > 0 && !isChinese(message)){
                     html_str += await translation(message);
                 }
             }
